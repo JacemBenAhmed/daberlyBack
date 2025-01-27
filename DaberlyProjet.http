@@ -1,0 +1,6 @@
+@DaberlyProjet_HostAddress = http://localhost:5096
+
+GET {{DaberlyProjet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

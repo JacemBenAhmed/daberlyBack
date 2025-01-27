@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\correction_ex_jardin.pdf",
+      "PackagePath": "staticwebassets\\uploads\\correction_ex_jardin.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DaberlyProjet.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DaberlyProjet.props",
+      "PackagePath": "build\\DaberlyProjet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DaberlyProjet.props",
+      "PackagePath": "buildMultiTargeting\\DaberlyProjet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DaberlyProjet.props",
+      "PackagePath": "buildTransitive\\DaberlyProjet.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

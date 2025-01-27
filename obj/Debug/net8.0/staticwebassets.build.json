@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "WKWyUC6VRn/ZU46gWZgjNUb12VmWAIYG6/76uktpXJk=",
+  "Source": "DaberlyProjet",
+  "BasePath": "_content/DaberlyProjet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DaberlyProjet\\wwwroot",
+      "Source": "DaberlyProjet",
+      "ContentRoot": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\",
+      "BasePath": "_content/DaberlyProjet",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg",
+      "SourceId": "DaberlyProjet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\",
+      "BasePath": "_content/DaberlyProjet",
+      "RelativePath": "uploads/472648840_601856815663680_4578868993648173959_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\correction_ex_jardin.pdf",
+      "SourceId": "DaberlyProjet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\",
+      "BasePath": "_content/DaberlyProjet",
+      "RelativePath": "uploads/correction_ex_jardin.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\correction_ex_jardin.pdf"
+    }
+  ]
+}
