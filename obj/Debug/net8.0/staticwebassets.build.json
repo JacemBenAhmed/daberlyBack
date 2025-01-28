@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WKWyUC6VRn/ZU46gWZgjNUb12VmWAIYG6/76uktpXJk=",
+  "Hash": "ISRK5aaR/qYjc1j1nSldALXci1Nnw9MTiUvglMZHp7o=",
   "Source": "DaberlyProjet",
   "BasePath": "_content/DaberlyProjet",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\472103369_955337003403829_5101388789436169902_n.jpg",
+      "SourceId": "DaberlyProjet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\",
+      "BasePath": "_content/DaberlyProjet",
+      "RelativePath": "uploads/472103369_955337003403829_5101388789436169902_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\472103369_955337003403829_5101388789436169902_n.jpg"
+    },
     {
       "Identity": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg",
       "SourceId": "DaberlyProjet",

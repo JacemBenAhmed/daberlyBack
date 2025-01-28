@@ -15,6 +15,13 @@ namespace DaberlyProjet.Data
         public DbSet<Pointure> Pointures { get; set; }
         public DbSet<Couleur> Couleurs { get; set; }
         public DbSet<ProduitPointureCouleur> ProduitPointureCouleurs { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+
+
         public DbSet<Album> Albums { get; set; }
 
         public static implicit operator AppDbContext(AlbumService v)
