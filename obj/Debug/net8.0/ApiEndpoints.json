@@ -281,6 +281,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DaberlyProjet.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/Order/CreateOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.OrderController",
+    "Method": "GetOrder",
+    "RelativePath": "api/Order/GetOrder/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.OrderController",
+    "Method": "GetOrders",
+    "RelativePath": "api/Order/GetOrders/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DaberlyProjet.Controllers.PhotoUserController",
     "Method": "UploadPhotos",
     "RelativePath": "api/PhotoUser",
