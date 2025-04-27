@@ -24,17 +24,7 @@ namespace DaberlyProjet.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProduitDTO>>> GetProduits()
         {
-            var produits = await _context.Produits
-                .Where(p => p.Visible)
-                .Select(p => new ProduitDTO
-                {
-                    Nom = p.Nom,
-                    Description = p.Description,
-                    Prix = p.Prix,
-                    Marque = p.Marque,
-                    Visible = p.Visible
-                })
-                .ToListAsync();
+            var produits = await _context.Produits.ToListAsync();
 
             return Ok(produits);
         }
@@ -44,8 +34,9 @@ namespace DaberlyProjet.Controllers
         {
             var produit = await _context.Produits
                 .Where(p => p.Id == id)
-                .Select(p => new ProduitDTO
+                .Select(p => new Produit
                 {
+                    Id = p.Id,
                     Nom = p.Nom,
                     Description = p.Description,
                     Prix = p.Prix,
@@ -61,6 +52,48 @@ namespace DaberlyProjet.Controllers
 
             return Ok(produit);
         }
+        [HttpGet("getByName/{name}")]
+        public async Task<ActionResult<ProduitDTO>> GetProductByName(string name)
+        {
+            var produit = await _context.Produits
+                .Where(p => p.Nom == name)
+                .FirstAsync();
+
+            if (produit == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(produit);
+        }
+
+        [HttpGet("getProductByProdPointCoulID/{id}")]
+        public async Task<IActionResult> GetProductByProdPointCoulId(int id)
+        {
+            var productPointCoul = await _context.ProduitPointureCouleurs
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (productPointCoul == null)
+            {
+                return NotFound($"ProduitPointureCouleur avec l'ID {id} non trouvé.");
+            }
+
+            var product = await _context.Produits
+                .FirstOrDefaultAsync(pr => pr.Id == productPointCoul.ProduitId);
+
+            if (product == null)
+            {
+                return NotFound($"Produit avec l'ID {productPointCoul.ProduitId} non trouvé.");
+            }
+
+            return Ok(new ProduitDTO
+            {
+                Nom = product.Nom,
+                Marque = product.Marque,
+                Prix = product.Prix,
+            });
+        }
+
 
         [HttpPost]
         public async Task<ActionResult<Produit>> PostProduit(ProduitDTO produitDTO)
@@ -77,7 +110,7 @@ namespace DaberlyProjet.Controllers
             _context.Produits.Add(produit);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProduit), new { id = produit.Id }, produit);
+            return Ok(produit.Id);
         }
 
         [HttpPut("{id}")]
@@ -94,6 +127,26 @@ namespace DaberlyProjet.Controllers
             produit.Prix = produitDTO.Prix;
             produit.Marque = produitDTO.Marque;
             produit.Visible = produitDTO.Visible;
+
+            _context.Entry(produit).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+
+        [HttpPut("setVisible/{id}")]
+        public async Task<IActionResult> setVisible(int id)
+        {
+            var produit = await _context.Produits.FindAsync(id);
+            if (produit == null)
+            {
+                return NotFound();
+            }
+
+            
+            produit.Visible = !produit.Visible;
 
             _context.Entry(produit).State = EntityState.Modified;
             await _context.SaveChangesAsync();

@@ -20,15 +20,39 @@ namespace DaberlyProjet.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 
-
+        public DbSet<Annonce> Annonces { get; set; }
 
         public DbSet<Album> Albums { get; set; }
 
-        public static implicit operator AppDbContext(AlbumService v)
+        public DbSet<AgentVendeur> AgentVendeurs { get; set; }
+
+        public DbSet<AnnonceRegion> AnnonceRegions { get; set; }
+
+
+        public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<Video> Videos { get; set; }
+
+        public DbSet<Message> Messages { get; set; }
+
+        public DbSet<Conversation>Conversations { get; set; }
+ 
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            throw new NotImplementedException();
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AgentVendeur>()
+                .HasKey(av => new { av.AgentId, av.VendeurId }); 
         }
+
+
+
+
+
+
+
     }
 
-   
+
 }

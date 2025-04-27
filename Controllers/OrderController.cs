@@ -38,10 +38,34 @@ namespace DaberlyProjet.Controllers
             {
                 var product = cartItem.ProduitPointureCouleur; 
 
+                var x = await _context.ProduitPointureCouleurs.FirstOrDefaultAsync(c => c.Id==cartItem.ProduitPointureCouleurId);
+
+                if (x == null)
+                {
+                    return BadRequest("produit ne pas trouvé ");
+                }
+                int qte = x.Quantite;
+
+               
+
+                if (qte < cartItem.Quantity)
+                {
+                    return BadRequest($"Stock insuffisant pour le produit  (disponible : , demandé : {cartItem.Quantity}).");
+                }
+
+                //  - stock from prods 
+                x.Quantite -= cartItem.Quantity;
+                // _context.ProduitPointureCouleurs.Update(x);
+               
+
+
                 var p = await _context.Produits.FirstOrDefaultAsync(c => c.Id == product.ProduitId);
 
                 totalAmount += cartItem.Quantity * p.Prix; 
             }
+
+
+
 
             var order = new Order
             {
@@ -53,29 +77,28 @@ namespace DaberlyProjet.Controllers
                 {
                     ProduitPointureCouleurId = ci.ProduitPointureCouleurId,
                     Quantity = ci.Quantity,
-                    Price = await _context.Produits
-                            .Where(p => p.Id == ci.ProduitPointureCouleur.ProduitId)
-                            .Select(p => p.Prix)
-                            .FirstOrDefaultAsync()  
+                    Price = totalAmount  
                 }))
             };
 
 
             await _context.Orders.AddAsync(order);
+
             await _context.SaveChangesAsync();
 
-            _context.Carts.Remove(cart);
+            _context.CartItems.RemoveRange(cart.CartItems);
+
             await _context.SaveChangesAsync();
 
-            return Ok();
+
+            return Ok(order.Id);
         }
 
-        [HttpGet("GetOrders/{userId}")]
+        [HttpGet("GetOrdersByUser/{userId}")]
         public async Task<IActionResult> GetOrders(int userId)
         {
             var orders = await _context.Orders
-                .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.ProduitPointureCouleur)
+                
                 .Where(o => o.UserId == userId)
                 .ToListAsync();
 
@@ -87,13 +110,11 @@ namespace DaberlyProjet.Controllers
             return Ok(orders);
         }
 
-        // Obtenir une commande par ID
+        
         [HttpGet("GetOrder/{orderId}")]
         public async Task<IActionResult> GetOrder(int orderId)
         {
             var order = await _context.Orders
-                .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.ProduitPointureCouleur)
                 .FirstOrDefaultAsync(o => o.Id == orderId);
 
             if (order == null)
@@ -102,6 +123,15 @@ namespace DaberlyProjet.Controllers
             }
 
             return Ok(order);
+        }
+
+        [HttpGet("GetOrderItems/{orderId}")]
+        public async Task<IActionResult> GetOrderItems(int orderId)
+        {
+            var orderItems = await _context.OrderItems.Where(o => o.Id == orderId).ToListAsync();
+            if (orderItems == null)
+                return NotFound("Aucun"); 
+            return Ok(orderItems);
         }
     }
 }

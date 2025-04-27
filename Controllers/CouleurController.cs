@@ -39,7 +39,7 @@ namespace DaberlyProjet.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Couleur>> PostCouleur(string nom)
+        public async Task<ActionResult<Couleur>> PostCouleur( string nom)
         {
             var x = new Couleur{Nom = nom};
             _context.Couleurs.Add(x);
@@ -50,14 +50,22 @@ namespace DaberlyProjet.Controllers
 
        
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCouleur(int id, Couleur couleur)
+        public async Task<IActionResult> PutCouleur(int id, string couleur)
         {
-            if (id != couleur.Id)
+
+
+            if (string.IsNullOrWhiteSpace(couleur))
             {
-                return BadRequest();
+                return BadRequest("La couleur ne peut pas être vide.");
             }
 
-            _context.Entry(couleur).State = EntityState.Modified;
+            var existingCouleur = await _context.Couleurs.FindAsync(id);
+            if (existingCouleur == null)
+            {
+                return NotFound($"Aucune couleur trouvée avec l'ID {id}.");
+            }
+
+            existingCouleur.Nom = couleur;
 
             try
             {
@@ -65,15 +73,10 @@ namespace DaberlyProjet.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CouleurExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return StatusCode(500, "Erreur lors de la mise à jour de la couleur.");
             }
+
+            return NoContent();
 
             return NoContent();
         }

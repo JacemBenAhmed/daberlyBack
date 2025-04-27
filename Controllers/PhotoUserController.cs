@@ -5,6 +5,7 @@ using DaberlyProjet.Models;
 using DaberlyProjet.Data;  
 using System.Threading.Tasks;
 using DaberlyProjet.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace DaberlyProjet.Controllers
 {
@@ -45,5 +46,20 @@ namespace DaberlyProjet.Controllers
                 return BadRequest(new { message = "Error uploading files", error = ex.Message });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPhotosById(int id)
+        {
+            try
+            {
+                var photoUser = await _context.PhotosUser.Where(u => u.IdUser == id).FirstAsync();
+                return Ok(photoUser);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("");
+            }
+        }
+
     }
 }

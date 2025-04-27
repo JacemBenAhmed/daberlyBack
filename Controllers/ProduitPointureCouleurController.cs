@@ -20,20 +20,13 @@ namespace DaberlyProjet.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProduitPointureCouleur>>> GetAll()
         {
-            return await _context.ProduitPointureCouleurs
-                .Include(p => p.Produit)
-                .Include(p => p.Pointure)
-                .Include(p => p.Couleur)
-                .ToListAsync();
+            return await _context.ProduitPointureCouleurs.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ProduitPointureCouleur>> GetById(int id)
         {
             var item = await _context.ProduitPointureCouleurs
-                .Include(p => p.Produit)
-                .Include(p => p.Pointure)
-                .Include(p => p.Couleur)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (item == null)
@@ -44,6 +37,27 @@ namespace DaberlyProjet.Controllers
             return item;
         }
 
+        [HttpGet("getByProductId/{id}")]
+        public async Task<IActionResult> getByProductID(int id)
+        {
+            var products = await _context.ProduitPointureCouleurs.Where(p=>p.ProduitId == id).ToListAsync();
+            if(products==null)
+            {
+                return NotFound("not found");
+            }
+
+            return Ok(products);
+        }
+
+        [HttpGet("getByIDs/{prodId}/{pointureId}/{couleurId}")]
+        public async Task<IActionResult> getByIDs(int prodId, int pointureId, int couleurId)
+        {
+            var p = await _context.ProduitPointureCouleurs.Where(p => p.ProduitId == prodId && p.PointureId == pointureId && p.CouleurId == couleurId).FirstOrDefaultAsync();
+            if (p == null)
+                return NotFound();
+            
+            return Ok(p);
+        }
         [HttpPost]
         public async Task<ActionResult<ProduitPointureCouleur>> Create(ProduitPointureCouleurDTO dto)
         {

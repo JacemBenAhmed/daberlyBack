@@ -1,5 +1,68 @@
 [
   {
+    "ContainingType": "DaberlyProjet.Controllers.AgentVendeurController",
+    "Method": "GetAgentVendeurs",
+    "RelativePath": "api/AgentVendeur",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AgentVendeurController",
+    "Method": "PostAgentVendeur",
+    "RelativePath": "api/AgentVendeur",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentVendeurDto",
+        "Type": "DaberlyProjet.DTO.AgentVendeursDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AgentVendeurController",
+    "Method": "DeleteAgentVendeur",
+    "RelativePath": "api/AgentVendeur",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idAgent",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "idVendeur",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AgentVendeurController",
+    "Method": "GetAgentVendeurByVendeur",
+    "RelativePath": "api/AgentVendeur/getAgentsVendeursID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DaberlyProjet.Controllers.AlbumController",
     "Method": "GetAlbums",
     "RelativePath": "api/Album",
@@ -98,6 +161,174 @@
     ]
   },
   {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceController",
+    "Method": "GetAll",
+    "RelativePath": "api/Annonce",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceController",
+    "Method": "Create",
+    "RelativePath": "api/Annonce",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newAnnonce",
+        "Type": "DaberlyProjet.DTO.AnnonceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceController",
+    "Method": "deleteAnnonce",
+    "RelativePath": "api/Annonce/deleteAnnonce",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceController",
+    "Method": "GetAnnonceById",
+    "RelativePath": "api/Annonce/getAnnonceById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceController",
+    "Method": "modifAnnonce",
+    "RelativePath": "api/Annonce/modifAnnonce",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "txt",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceRegionsController",
+    "Method": "GetAnnonceRegions",
+    "RelativePath": "api/AnnonceRegions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceRegionsController",
+    "Method": "PostAnnonceRegion",
+    "RelativePath": "api/AnnonceRegions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "annonceRegionDTO",
+        "Type": "DaberlyProjet.DTO.AnnonceRegionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceRegionsController",
+    "Method": "GetAnnonceRegion",
+    "RelativePath": "api/AnnonceRegions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.Models.AnnonceRegion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceRegionsController",
+    "Method": "DeleteAnnonceRegion",
+    "RelativePath": "api/AnnonceRegions/{id}/{region}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "region",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.AnnonceRegionsController",
+    "Method": "GetAnnonceRegionById",
+    "RelativePath": "api/AnnonceRegions/getByAnnonceID/{annonceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "annonceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DaberlyProjet.Controllers.CartController",
     "Method": "AddToCart",
     "RelativePath": "api/Cart/AddToCart",
@@ -164,8 +395,87 @@
         "IsRequired": true
       },
       {
-        "Name": "cartItemDTO",
-        "Type": "DaberlyProjet.DTO.CartItemDTO",
+        "Name": "cartId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "prodId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "op",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ChatController",
+    "Method": "GetConversation",
+    "RelativePath": "api/Chat/conversation/{userId1}/{userId2}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId1",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId2",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ChatController",
+    "Method": "GetUserConversations",
+    "RelativePath": "api/Chat/conversations/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ChatController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/Chat/mark-as-read",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DaberlyProjet.DTO.MarkAsReadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ChatController",
+    "Method": "SendMessage",
+    "RelativePath": "api/Chat/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageDto",
+        "Type": "DaberlyProjet.DTO.MessageRequestDTO",
         "IsRequired": true
       }
     ],
@@ -258,8 +568,8 @@
       },
       {
         "Name": "couleur",
-        "Type": "DaberlyProjet.Models.Couleur",
-        "IsRequired": true
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -314,8 +624,24 @@
   },
   {
     "ContainingType": "DaberlyProjet.Controllers.OrderController",
+    "Method": "GetOrderItems",
+    "RelativePath": "api/Order/GetOrderItems/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.OrderController",
     "Method": "GetOrders",
-    "RelativePath": "api/Order/GetOrders/{userId}",
+    "RelativePath": "api/Order/GetOrdersByUser/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -350,6 +676,141 @@
         "Name": "UserId",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.PhotoUserController",
+    "Method": "GetPhotosById",
+    "RelativePath": "api/PhotoUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlaylistController",
+    "Method": "GetPlaylists",
+    "RelativePath": "api/Playlist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DaberlyProjet.Models.Playlist, DaberlyProjet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PlaylistController",
+    "Method": "CreatePlaylist",
+    "RelativePath": "api/Playlist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Titre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PlaylistController",
+    "Method": "GetPlaylist",
+    "RelativePath": "api/Playlist/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.DTO.PlaylistDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PlaylistController",
+    "Method": "UpdatePlaylist",
+    "RelativePath": "api/Playlist/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedDto",
+        "Type": "DaberlyProjet.DTO.PlaylistDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlaylistController",
+    "Method": "DeletePlaylist",
+    "RelativePath": "api/Playlist/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -464,6 +925,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DaberlyProjet.Controllers.PointureController",
+    "Method": "getPointureByTaille",
+    "RelativePath": "api/Pointure/getByTaille/{taille}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taille",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DaberlyProjet.Controllers.ProduitController",
     "Method": "GetProduits",
     "RelativePath": "api/Produit",
@@ -561,6 +1038,64 @@
     "Method": "DeleteProduit",
     "RelativePath": "api/Produit/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ProduitController",
+    "Method": "GetProductByName",
+    "RelativePath": "api/Produit/getByName/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.DTO.ProduitDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ProduitController",
+    "Method": "GetProductByProdPointCoulId",
+    "RelativePath": "api/Produit/getProductByProdPointCoulID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ProduitController",
+    "Method": "setVisible",
+    "RelativePath": "api/Produit/setVisible/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -682,6 +1217,192 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DaberlyProjet.Controllers.ProduitPointureCouleurController",
+    "Method": "getByIDs",
+    "RelativePath": "api/ProduitPointureCouleur/getByIDs/{prodId}/{pointureId}/{couleurId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prodId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pointureId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "couleurId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.ProduitPointureCouleurController",
+    "Method": "getByProductID",
+    "RelativePath": "api/ProduitPointureCouleur/getByProductId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VideoController",
+    "Method": "GetVideos",
+    "RelativePath": "api/Video",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DaberlyProjet.Models.Video, DaberlyProjet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VideoController",
+    "Method": "AddVideo",
+    "RelativePath": "api/Video",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Titre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PlaylistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.Models.Video",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VideoController",
+    "Method": "GetVideo",
+    "RelativePath": "api/Video/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DaberlyProjet.Models.Video",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VideoController",
+    "Method": "DeleteVideo",
+    "RelativePath": "api/Video/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VideoController",
+    "Method": "UpdateVideo",
+    "RelativePath": "api/Video/{playlistId}/videos/{videoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playlistId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "videoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Titre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PlaylistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DaberlyProjet.Controllers.UserController",
     "Method": "GetCurrentUser",
     "RelativePath": "User/current",
@@ -703,6 +1424,22 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "GetUsersByRole",
+    "RelativePath": "User/getUsersRole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -771,6 +1508,80 @@
   },
   {
     "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "setBlockedAccount",
+    "RelativePath": "User/setBlocked",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "setRegion",
+    "RelativePath": "User/setRegion/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "region",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "setRoleUser",
+    "RelativePath": "User/setRole",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "GetUserByEmail",
+    "RelativePath": "User/userByEmail/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
     "Method": "GetUserById",
     "RelativePath": "User/userByid/{id}",
     "HttpMethod": "GET",
@@ -793,6 +1604,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaberlyProjet.Controllers.UserController",
+    "Method": "GetUsersByAddress",
+    "RelativePath": "User/usersByAddress/{address}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "address",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

@@ -17,7 +17,6 @@ namespace DaberlyProjet.Controllers
         {
             _context = context;
         }
-
         [HttpPost("AddToCart")]
         public async Task<IActionResult> AddToCart(int userId, CartItemDTO cartItemDTO)
         {
@@ -32,22 +31,30 @@ namespace DaberlyProjet.Controllers
                     UserId = userId,
                     CartItems = new List<CartItem>()
                 };
-
                 await _context.Carts.AddAsync(cart);
             }
 
             var existingCartItem = cart.CartItems
-                .FirstOrDefault(ci => ci.CartId == cart.Id);
+                .FirstOrDefault(ci => ci.ProduitPointureCouleurId == cartItemDTO.ProduitPointureCouleurId);
 
             if (existingCartItem == null)
             {
                 var cartItem = new CartItem
                 {
                     ProduitPointureCouleurId = cartItemDTO.ProduitPointureCouleurId,
-                    Quantity = 0
+                    Quantity = cartItemDTO.Quantity > 0 ? cartItemDTO.Quantity : 1,
+                    CartId = cart.Id
                 };
+
+                await _context.CartItems.AddAsync(cartItem);
                 cart.CartItems.Add(cartItem);
             }
+            else
+            {
+                existingCartItem.Quantity += cartItemDTO.Quantity > 0 ? cartItemDTO.Quantity : 1;
+            }
+
+            //_context.Entry(cart).State = EntityState.Modified;
 
             await _context.SaveChangesAsync();
 
@@ -80,12 +87,16 @@ namespace DaberlyProjet.Controllers
                     c.UserId,
                     CartItems = c.CartItems.Select(ci => new
                     {
+                        ci.Id,
+                        ci.CartId,
                         ci.ProduitPointureCouleurId,
                         ci.Quantity,
                         Produit = new
                         {
                             ci.ProduitPointureCouleur.Produit.Id,
-                            ci.ProduitPointureCouleur.Produit.Nom
+                            ci.ProduitPointureCouleur.Produit.Nom,
+                            ci.ProduitPointureCouleur.Produit.Prix,
+                            ci.ProduitPointureCouleur.Produit.Marque
                         }
                     })
                 })
@@ -97,19 +108,36 @@ namespace DaberlyProjet.Controllers
             return Ok(cart);
         }
 
+
+
+
         [HttpPut("UpdateCartItem/{cartItemId}")]
-        public IActionResult UpdateCartItem(int cartItemId, [FromBody] CartItemDTO cartItemDTO)
+        public IActionResult UpdateCartItem(int cartItemId, int cartId  ,int prodId , string op )
         {
-            var cartItem = _context.CartItems.FirstOrDefault(ci => ci.Id == cartItemId);
+            var cartItem = _context.CartItems.FirstOrDefault(ci => ci.Id == cartItemId & ci.CartId==cartId & ci.ProduitPointureCouleurId==prodId);
+
             if (cartItem == null)
                 return NotFound("CartItem not found.");
 
-            cartItem.Quantity = cartItemDTO.Quantity;
-            cartItem.ProduitPointureCouleurId = cartItemDTO.ProduitPointureCouleurId;
+            if(op=="plusQte")
+            {
+                cartItem.Quantity += 1;
+            }
+            else if(op=="minusQte")
+            {
+                cartItem.Quantity -= 1;
+            }
+
 
             _context.SaveChanges();
+
             return Ok(cartItem);
         }
+
+     
+
+
+
 
         [HttpDelete("RemoveFromCart/{cartItemId}")]
         public IActionResult RemoveFromCart(int cartItemId)

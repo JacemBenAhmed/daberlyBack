@@ -23,11 +23,16 @@ namespace DaberlyProjet.Models
         public string Role { get; set; }
         [Required]
         public string numCin { get; set; }
-       
+
+        public string Region { get; set; }
 
         public bool blocked { get; set; }
 
         public DateTime DateCreated { get; set; }
+
+
+
+    
 
 
     }

@@ -41,6 +41,16 @@ namespace DaberlyProjet.Controllers
             return Ok(pointure);
         }
 
+        [HttpGet("getByTaille/{taille}")]
+        public async Task<IActionResult> getPointureByTaille(string taille)
+        {
+            var pointure = await _context.Pointures.Where(p => p.Taille == taille).FirstOrDefaultAsync();
+            if (pointure == null)
+            {
+                return NotFound();
+            }
+            return Ok(pointure);
+        }
         
         [HttpPost]
         public async Task<ActionResult<Pointure>> PostPointure(string pointure)

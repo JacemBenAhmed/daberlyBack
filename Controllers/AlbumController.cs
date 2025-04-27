@@ -44,21 +44,40 @@ namespace DaberlyProjet.Controllers
             return Ok(albums);
         }
 
-        
+
         [HttpPost]
-        public async Task<ActionResult<Album>> PostAlbum ([FromForm] AlbumDTO albumDTO , IFormFile file)
+        public async Task<ActionResult<Album>> PostAlbum([FromForm] AlbumDTO albumDTO, IFormFile file)
         {
-            
             var produit = await _context.Produits.FindAsync(albumDTO.ProduitId);
             if (produit == null)
             {
                 return NotFound("Produit non trouvé");
             }
 
+            if (file == null)
+            {
+                return BadRequest("Aucun fichier téléchargé");
+            }
+
+            var fileType = await DetermineFileType(file);
+
+            if (fileType == "Image")
+            {
+                albumDTO.EstPhoto = true; 
+            }
+            else if (fileType == "Vidéo")
+            {
+                albumDTO.EstPhoto = false; 
+            }
+            else
+            {
+                return BadRequest("Type de fichier non pris en charge");
+            }
+
             var album = new Album
             {
-                Url = await _albumService.UploadFiles(file), 
-                EstPhoto = albumDTO.EstPhoto, // X
+                Url = await _albumService.UploadFiles(file),
+                EstPhoto = albumDTO.EstPhoto,
                 ProduitId = albumDTO.ProduitId
             };
 
@@ -68,10 +87,32 @@ namespace DaberlyProjet.Controllers
             return Ok();
         }
 
-        
-        
+        private async Task<string> DetermineFileType(IFormFile file)
+        {
+            var imageMimeTypes = new List<string> { "image/jpeg", "image/png", "image/gif", "image/bmp" };
+            var videoMimeTypes = new List<string> { "video/mp4", "video/avi", "video/mkv", "video/webm" };
 
-        
+            var mimeType = file.ContentType;
+
+            if (imageMimeTypes.Contains(mimeType))
+            {
+                return "Image";
+            }
+            else if (videoMimeTypes.Contains(mimeType))
+            {
+                return "Vidéo";
+            }
+            else
+            {
+                return "Type de fichier non pris en charge";
+            }
+        }
+
+
+
+
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAlbum(int id)
         {

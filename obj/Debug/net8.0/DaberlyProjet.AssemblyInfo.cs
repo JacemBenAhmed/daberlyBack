@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DaberlyProjet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34291968a026c54b6fc1dff7ec27b129191a8dec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b289990d2fe36a2009900bc268047457209f95d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DaberlyProjet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DaberlyProjet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

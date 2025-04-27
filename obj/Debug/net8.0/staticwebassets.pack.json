@@ -1,6 +1,38 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\file_example_MP4_480_1_5MG_7cb563d2-8890-4c94-b69a-a8b0e083f8f2.mp4",
+      "PackagePath": "staticwebassets\\PlaylistImages\\file_example_MP4_480_1_5MG_7cb563d2-8890-4c94-b69a-a8b0e083f8f2.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\playlist.jpg",
+      "PackagePath": "staticwebassets\\PlaylistImages\\playlist.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\testVideo_f759c51a-74e1-4915-aa8c-8e1528dd69ce.mp4",
+      "PackagePath": "staticwebassets\\PlaylistImages\\testVideo_f759c51a-74e1-4915-aa8c-8e1528dd69ce.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\testy.png",
+      "PackagePath": "staticwebassets\\PlaylistImages\\testy.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\testy_ba92921c-5e3f-40bf-893a-8b26d0c52931.png",
+      "PackagePath": "staticwebassets\\PlaylistImages\\testy_ba92921c-5e3f-40bf-893a-8b26d0c52931.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\PlaylistImages\\vid_9824d7ef-a2bb-4e12-8b41-f6c6bc76ee30.mp4",
+      "PackagePath": "staticwebassets\\PlaylistImages\\vid_9824d7ef-a2bb-4e12-8b41-f6c6bc76ee30.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\462560971_9011045368952017_2405360260339338123_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\462560971_9011045368952017_2405360260339338123_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\467919237_1548622832509317_8534058396680583337_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\467919237_1548622832509317_8534058396680583337_n.jpg"
+    },
+    {
       "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\472103369_955337003403829_5101388789436169902_n.jpg",
       "PackagePath": "staticwebassets\\uploads\\472103369_955337003403829_5101388789436169902_n.jpg"
     },
@@ -9,8 +41,144 @@
       "PackagePath": "staticwebassets\\uploads\\472648840_601856815663680_4578868993648173959_n.jpg"
     },
     {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\IMG_20241109_215340 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\IMG_20241109_215340 (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\Thorfinn Karlsefni _ Vinland Saga.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\Thorfinn Karlsefni _ Vinland Saga.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\asustuf.png",
+      "PackagePath": "staticwebassets\\uploads\\asustuf.png"
+    },
+    {
       "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\correction_ex_jardin.pdf",
       "PackagePath": "staticwebassets\\uploads\\correction_ex_jardin.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\file_example_MP4_480_1_5MG.mp4",
+      "PackagePath": "staticwebassets\\uploads\\file_example_MP4_480_1_5MG.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\hp.png",
+      "PackagePath": "staticwebassets\\uploads\\hp.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg1.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg1.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg2.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg2.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg3.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg3.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg4.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg4.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg5.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg5.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\imgg6.png",
+      "PackagePath": "staticwebassets\\uploads\\imgg6.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordan.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordan.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordan1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordan1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordan2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordan2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordan3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordan3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordan4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordan4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordann.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordann.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordann1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordann1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordann3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordann3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\jordann4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jordann4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nike1.png",
+      "PackagePath": "staticwebassets\\uploads\\nike1.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nike2.png",
+      "PackagePath": "staticwebassets\\uploads\\nike2.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nike3.png",
+      "PackagePath": "staticwebassets\\uploads\\nike3.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nike4.png",
+      "PackagePath": "staticwebassets\\uploads\\nike4.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nike5.png",
+      "PackagePath": "staticwebassets\\uploads\\nike5.png"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeAirForce1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeAirForce1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeAirForce2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeAirForce2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeAirForce3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeAirForce3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeAirForce4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeAirForce4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeSB1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeSB1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeSB2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeSB2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeSB3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeSB3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\nikeSB4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nikeSB4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jacem\\source\\repos\\DaberlyProjet\\DaberlyProjet\\wwwroot\\uploads\\vid.mp4",
+      "PackagePath": "staticwebassets\\uploads\\vid.mp4"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DaberlyProjet.Microsoft.AspNetCore.StaticWebAssets.props",

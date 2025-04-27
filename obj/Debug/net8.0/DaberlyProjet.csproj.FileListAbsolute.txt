@@ -142,3 +142,6 @@ C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\Microso
 C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\DaberlyProjet.staticwebassets.runtime.json
+C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\Jacem\source\repos\DaberlyProjet\DaberlyProjet\bin\Debug\net8.0\Microsoft.Extensions.Features.dll

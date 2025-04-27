@@ -22,6 +22,23 @@ namespace DaberlyProjet.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("DaberlyProjet.Models.AgentVendeur", b =>
+                {
+                    b.Property<int>("AgentId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("VendeurId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("AgentId", "VendeurId");
+
+                    b.HasIndex("VendeurId");
+
+                    b.ToTable("AgentVendeurs");
+                });
+
             modelBuilder.Entity("DaberlyProjet.Models.Album", b =>
                 {
                     b.Property<int>("Id")
@@ -45,6 +62,46 @@ namespace DaberlyProjet.Migrations
                     b.HasIndex("ProduitId");
 
                     b.ToTable("Albums");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Annonce", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Annonces");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.AnnonceRegion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnnonceId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AnnonceRegions");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Cart", b =>
@@ -91,6 +148,32 @@ namespace DaberlyProjet.Migrations
                     b.ToTable("CartItems");
                 });
 
+            modelBuilder.Entity("DaberlyProjet.Models.Conversation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("User1Id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("User2Id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("User1Id");
+
+                    b.HasIndex("User2Id");
+
+                    b.ToTable("Conversations");
+                });
+
             modelBuilder.Entity("DaberlyProjet.Models.Couleur", b =>
                 {
                     b.Property<int>("Id")
@@ -107,6 +190,44 @@ namespace DaberlyProjet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Couleurs");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ConversationId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("RecipientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SenderId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationId");
+
+                    b.HasIndex("RecipientId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Order", b =>
@@ -190,6 +311,34 @@ namespace DaberlyProjet.Migrations
                     b.HasIndex("IdUser");
 
                     b.ToTable("PhotosUser");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Playlist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Playlists");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Pointure", b =>
@@ -309,6 +458,10 @@ namespace DaberlyProjet.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("text");
@@ -323,6 +476,55 @@ namespace DaberlyProjet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Video", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("PlaylistId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Titre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlaylistId");
+
+                    b.ToTable("Videos");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.AgentVendeur", b =>
+                {
+                    b.HasOne("DaberlyProjet.Models.User", "Agent")
+                        .WithMany()
+                        .HasForeignKey("AgentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DaberlyProjet.Models.User", "Vendeur")
+                        .WithMany()
+                        .HasForeignKey("VendeurId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Agent");
+
+                    b.Navigation("Vendeur");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Album", b =>
@@ -364,6 +566,52 @@ namespace DaberlyProjet.Migrations
                     b.Navigation("Cart");
 
                     b.Navigation("ProduitPointureCouleur");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Conversation", b =>
+                {
+                    b.HasOne("DaberlyProjet.Models.User", "User1")
+                        .WithMany()
+                        .HasForeignKey("User1Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DaberlyProjet.Models.User", "User2")
+                        .WithMany()
+                        .HasForeignKey("User2Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User1");
+
+                    b.Navigation("User2");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Message", b =>
+                {
+                    b.HasOne("DaberlyProjet.Models.Conversation", "Conversation")
+                        .WithMany("Messages")
+                        .HasForeignKey("ConversationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DaberlyProjet.Models.User", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DaberlyProjet.Models.User", "Sender")
+                        .WithMany()
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Conversation");
+
+                    b.Navigation("Recipient");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Order", b =>
@@ -434,9 +682,25 @@ namespace DaberlyProjet.Migrations
                     b.Navigation("Produit");
                 });
 
+            modelBuilder.Entity("DaberlyProjet.Models.Video", b =>
+                {
+                    b.HasOne("DaberlyProjet.Models.Playlist", "Playlist")
+                        .WithMany("Videos")
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Playlist");
+                });
+
             modelBuilder.Entity("DaberlyProjet.Models.Cart", b =>
                 {
                     b.Navigation("CartItems");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Conversation", b =>
+                {
+                    b.Navigation("Messages");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Couleur", b =>
@@ -447,6 +711,11 @@ namespace DaberlyProjet.Migrations
             modelBuilder.Entity("DaberlyProjet.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("DaberlyProjet.Models.Playlist", b =>
+                {
+                    b.Navigation("Videos");
                 });
 
             modelBuilder.Entity("DaberlyProjet.Models.Pointure", b =>

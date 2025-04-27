@@ -10,6 +10,7 @@ using System.Text;
 using BCrypt.Net;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace DaberlyProjet.Controllers
 {
@@ -49,15 +50,27 @@ namespace DaberlyProjet.Controllers
                 Role = "vendeur",
                 blocked = true , // true until admin accept (if champs is OK ) 
                 numCin = dto.numCin,
-                DateCreated = DateTime.UtcNow
+                DateCreated = DateTime.UtcNow,
+                Region = "vide"
             };
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
 
-            
+            var existMail = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+            if (existMail == null)
+            {
 
-            return Ok("User registered successfully");
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+                return Ok("User registered successfully");
+
+
+            }
+            else
+            {
+                return BadRequest("Mail exist deja");
+            }
+
+
         }
 
 
@@ -67,9 +80,14 @@ namespace DaberlyProjet.Controllers
         public async Task<IActionResult> Login(UserLoginDTO dto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == dto.Email);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash) || user.blocked==true)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash)  )
             {
-                return Unauthorized("Invalid email or password");
+                return NotFound("Invalid email or password");
+            }
+
+            if(user.blocked == true)
+            {
+                return Unauthorized("user blocked ! ");
             }
 
             var token = GenerateJwtToken(user);
@@ -92,6 +110,20 @@ namespace DaberlyProjet.Controllers
             var users = await _context.Users.ToListAsync();
             return Ok(users);
         }
+
+        [HttpGet("getUsersRole")]
+        public async Task<IActionResult> GetUsersByRole(string role)
+        {
+            var users = await _context.Users.Where(u=>u.Role == role).ToListAsync();
+
+            if(users.Count == 0)
+            {
+                return NotFound("Users not found");
+            }
+            return Ok(users);
+        }
+
+
 
         [Authorize]
         [HttpGet("current")]
@@ -137,6 +169,30 @@ namespace DaberlyProjet.Controllers
             return Ok(user);
         }
 
+
+        [HttpGet("userByEmail/{email}")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            var user = await _context.Users.Where(c=>c.Email == email).FirstOrDefaultAsync();
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            return Ok(user);
+        }
+        [HttpGet("usersByAddress/{address}")]
+        public async Task<IActionResult> GetUsersByAddress(string address)
+        {
+            var users = await _context.Users.Where(c => c.Addresse == address).ToListAsync();
+            if (users == null)
+            {
+                return NotFound("User not found");
+            }
+
+            return Ok(users);
+        }
+
         [Authorize]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteUser(int id)
@@ -157,6 +213,60 @@ namespace DaberlyProjet.Controllers
             await _context.SaveChangesAsync();
 
             return Ok("User deleted successfully");
+        }
+
+        [HttpPut("setBlocked")]
+        public async Task<IActionResult> setBlockedAccount(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound("not Found");
+            }
+            else
+            {
+                user.blocked = !user.blocked;
+                _context.SaveChanges();
+                return Ok();
+            }
+        }
+
+        [HttpPut("setRegion/{id}")]
+        public async Task<IActionResult> setRegion(int id, [FromQuery] string region)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound("not Found");
+            }
+            else
+            {
+                user.Region = region;
+                _context.SaveChanges();
+                return Ok();
+            }
+        }
+
+        [HttpPut("setRole")]
+        public async Task<IActionResult> setRoleUser(int id , string role)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound("not Found");
+            }
+            else
+            {
+                if(role=="admin" | role=="agent" | role=="vendeur" | role=="client fidele")
+                {
+                    user.Role = role;
+                    _context.SaveChanges();
+                }
+
+                
+                return Ok();
+            }
+
         }
 
         private string GenerateJwtToken(User user)
